@@ -1,0 +1,19 @@
+{
+  "name": "subreader-api",
+  "version": "1.0.0",
+  "description": "An API to communicate with the SubReader service, enabling subtitles to be read aloud.",
+  "main": "lib/api.js",
+  "repository": "http://subreader.dk",
+  "author": "Anders Bredgaard Thuesen <andersbthuesen@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
+    "socket.io-client": "^2.0.3"
+  },
+  "devDependencies": {
+    "qrcode-console": "^0.1.0"
+  },
+  "config": {
+    "endpoint": "http://localhost"
+  }
+}
