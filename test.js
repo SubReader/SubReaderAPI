@@ -1,5 +1,18 @@
 const { generate: showQR } = require("qrcode-console");
-const { getStream } = require("./lib/api");
+const {
+  getAuthToken,
+  getServiceToken,
+  getSTreamToken,
+  Stream
+} = require("./lib/api");
+
+async function getStream(onId) {
+  const { token: authToken, id: authId } = await getAuthToken();
+  onId(authId);
+  const { service_token: serviceToken } = await getServiceToken(authToken);
+  const { token, id: streamId } = await getStreamToken(serviceToken);
+  return new Stream(token, streamId);
+}
 
 getStream(authId => {
   console.log(authId);
