@@ -1,5 +1,5 @@
 const { generate: showQR } = require("qrcode-console");
-const { getStream } = require("./lib");
+const { getStream } = require("./lib/api");
 
 getStream(authId => {
   console.log(authId);
